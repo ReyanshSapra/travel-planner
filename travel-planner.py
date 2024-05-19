@@ -12,7 +12,8 @@ def generate_pdf(itinerary_df, trip_title):
     pdf.set_font("Arial", size=12)
     
     for index, row in itinerary_df.iterrows():
-        pdf.cell(200, 10, txt=f"{row['Date']} - {row['Plan']}", ln=True)
+        pdf.cell(200, 10, txt=f"{row['Date']}: {row['Plan']}", ln=True)
+        pdf.cell(200, 10, txt="--------------------------", ln=True)
     
     pdf_file = f"{trip_title}.pdf"
     pdf.output(pdf_file)
